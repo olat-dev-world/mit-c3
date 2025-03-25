@@ -5,9 +5,18 @@ from flask import Flask, jsonify, request
 # creating a Flask app 
 app = Flask(__name__) 
 
+
+
+# @app.route('/output/<string:t_diff>', methods = ['GET']) 
+# def disp(t_diff): 
+#     lst_data = [] 
+#     data = Task1_tz_diff.timeDiff_sec(t_diff)
+#     lst_data.append(data) 
+#     return jsonify(lst_data)
+
 @app.route('/', methods = ['GET', 'POST']) 
 def task_home():
-    t_diff = '00:00:00'
+    t_diff = '01:06:00'
     lst_data = [] 
 
     if(request.method == 'GET'): 

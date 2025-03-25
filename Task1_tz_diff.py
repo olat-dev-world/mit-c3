@@ -20,14 +20,16 @@ def timeDiff_sec(timeDiff):
             time_secs += int(ts[0])*3600 + int(ts[1])*60 + int(ts[2])
     return time_secs
 
+def timeDiff(t1,t2):
+    t_diff = convert(t1) - convert(t2)
+    t_diffsec = timeDiff_sec(t_diff)
+    return str(t_diffsec)
+
 def main():
 
     t1 = 'Sat 02 May 2015 19:54:36 +0530' #Dec 4 2024 10:07AM
     t2 = 'Fri 01 May 2015 13:54:36 -0000'
-
-    t_diff = convert(t1) - convert(t2)
+    t_diff = timeDiff(t1,t2)
     print(t_diff)
-    print(timeDiff_sec(t_diff))
-
 if __name__ == "__main__":
     main()
